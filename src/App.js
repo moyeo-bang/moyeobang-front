@@ -3,11 +3,12 @@
 import './App.css';
 import Map from './components/Map';
 import Chat from './components/Chat'
+import { useState } from 'react';
+import LoginModal from './components/LoginModal';
 
 function App() {
 
-  let post = '이리로 모여방';
-
+  const [modal, setModal] = useState(false);
 
   return (
     <div className="App">
@@ -18,14 +19,23 @@ function App() {
         </div>
         <div className="userInfo">
           <span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="39" viewBox="0 0 35 39" fill="none">
-              <path d="M2.0741 37.3889V35.1771C2.0741 26.6262 9.00592 19.6944 17.5567 19.6944C26.1076 19.6944 33.0394 26.6262 33.0394 35.1771V37.3889" stroke="#D9D9D9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M17.5567 19.6945C22.4428 19.6945 26.4039 15.7333 26.4039 10.8472C26.4039 5.96104 22.4428 2 17.5567 2C12.6705 2 8.70947 5.96104 8.70947 10.8472C8.70947 15.7333 12.6705 19.6945 17.5567 19.6945Z" stroke="#D9D9D9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="29" viewBox="0 0 35 39" fill="none">
+              <path d="M2.0741 37.3889V35.1771C2.0741 26.6262 9.00592 19.6944 17.5567 19.6944C26.1076 19.6944 33.0394 26.6262 33.0394 35.1771V37.3889" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M17.5567 19.6945C22.4428 19.6945 26.4039 15.7333 26.4039 10.8472C26.4039 5.96104 22.4428 2 17.5567 2C12.6705 2 8.70947 5.96104 8.70947 10.8472C8.70947 15.7333 12.6705 19.6945 17.5567 19.6945Z" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
-          <p>로그인 / 회원가입</p>
+          <p onClick={() => {
+            if(modal == false){
+              setModal(true);
+            } else setModal(false);
+
+          }}>로그인 / 회원가입</p>
         </div>
       </div>
+
+      { modal == true ? <LoginModal closedModal={() => {
+        setModal(false)
+      }}/> : null}
 
       <div id='nav'>
         <div className='searchBar'>

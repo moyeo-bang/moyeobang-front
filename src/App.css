@@ -31,7 +31,6 @@
   font-family: 'Bevan', serif;
   font-size: 48px;
   font-weight: bold;
-  /* background: linear-gradient(to bottom,#C957FF 23.26%, #E39BFE 54.03%, #FBDBFE 76.61%); */
   background: linear-gradient(180deg, #AF60FF 0%, #FBDBFE 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -40,7 +39,7 @@
 
 .logoIcon {
   width: 123px;
-
+  margin-right: 67px;
 }
 .logo {
   padding-top: 10px;
@@ -50,38 +49,68 @@
 .userInfo {
   display: flex;
   align-items: center;
-  width: 242px;
-  height: 66px;
+  width: 245px;
+  height: 65px;
   background-color: #fff;
   border: 1px solid #d9d9d9;
   border-radius: 121px;
 }
 
 .userInfo span {
-  width: 50px;
-  height: 50px;
-  border: 1px solid #d9d9d9;
-  border-radius: 25px;
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(180deg, #cd9ffa 0%, #FBDBFE 100%);
+  border: 1px solid #fff;
+  border-radius: 22.5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 7px;
+  margin: 0 7px 0 12px;
 }
 
 .userInfo p {
   font-size: 20px;
   font-weight: 500;
   padding-left: 5px;
+  cursor: pointer;
+}
+
+.userInfo:hover {
+  transition: ease .3s;
+  box-shadow: 0 0 6px rgba(0,0,0,.1);
 }
 
 
-.logInModal {
+/* .logInModal {
   margin-top: 20px;
   padding: 20px;
   background: #fff;
   text-align: center;
   border: 1px solid #d9d9d9;
   border-radius: 6px;
+} */
+
+.modalWrapper {
+  position: relative;
+  width: 450px;
+  height:690px;
+  margin-top: 20px;
+  padding: 20px;
+  background: #fff;
+  text-align: center;
+  border: 1px solid #d9d9d9;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.closeBtn {
+  cursor: pointer;
+}
+
+.closeBtn:hover path {
+  fill: #ccc;
 }
 
 
